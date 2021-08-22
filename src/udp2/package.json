@@ -107,6 +107,10 @@
         },
         {
             "required": true,
+            "file": "Utilities/Initials.php"
+        },
+        {
+            "required": true,
             "file": "Interfaces/GeneratorInterface.php"
         }
     ],
