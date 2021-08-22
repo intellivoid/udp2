@@ -144,6 +144,8 @@
 
                 case DefaultAvatarType::InitialsBase:
                     $initials_based_generator = new InitialsAvatarGenerator();
+                    $initials_based_generator->width(640);
+                    $initials_based_generator->height(640);
 
                     try
                     {

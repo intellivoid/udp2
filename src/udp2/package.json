@@ -21,9 +21,9 @@
                 "required": true
             },
             {
-                "package": "net.intellivoid.imagelib",
+                "package": "com.intervention.image",
                 "version": "latest",
-                "source": "default@github/intellivoid/ImageLib",
+                "source": "intervention@composer/image",
                 "required": true
             },
             {

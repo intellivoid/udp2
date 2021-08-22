@@ -11,7 +11,7 @@
     }
     catch (\udp2\Exceptions\AvatarNotFoundException $e)
     {
-        $udp->generateAvatar($avatar);
+        $udp->generateAvatar($avatar, "Netkas", \udp2\Abstracts\DefaultAvatarType::InitialsBase);
         $zimage = $udp->getAvatar($avatar);
     }
 ?>

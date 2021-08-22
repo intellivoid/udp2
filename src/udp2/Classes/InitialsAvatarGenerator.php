@@ -3,9 +3,9 @@
     namespace udp2\Classes;
 
 
-    use ImageLib\AbstractFont;
-    use ImageLib\Image;
-    use ImageLib\ImageManager;
+    use Intervention\Image\AbstractFont;
+    use Intervention\Image\Image;
+    use Intervention\Image\ImageManager;
     use SvgLib\Nodes\Shapes\SVGCircle;
     use SvgLib\Nodes\Shapes\SVGRect;
     use SvgLib\Nodes\Structures\SVGFont;
@@ -22,106 +22,106 @@
         /**
          * @var ImageManager
          */
-        protected ImageManager $image;
+        protected $image;
 
         /**
          * @var Initials
          */
-        protected Initials $initials_generator;
+        protected $initials_generator;
 
         /**
          * @var string
          */
-        protected string $driver = 'gd'; // imagick or gd
+        protected $driver = 'gd'; // imagick or gd
 
         /**
          * @var float
          */
-        protected float $fontSize = 0.5;
+        protected $fontSize = 0.5;
 
         /**
          * @var string
          */
-        protected string $name = 'John Doe';
+        protected $name = 'John Doe';
 
         /**
          * @var int
          */
-        protected int $width = 48;
+        protected $width = 48;
 
         /**
          * @var int
          */
-        protected int $height = 48;
+        protected $height = 48;
 
         /**
          * @var string
          */
-        protected string $bgColor = '#f0e9e9';
+        protected $bgColor = '#f0e9e9';
 
         /**
          * @var string
          */
-        protected string $fontColor = '#8b5d5d';
+        protected $fontColor = '#8b5d5d';
 
         /**
          * @var bool
          */
-        protected bool $rounded = false;
+        protected $rounded = false;
 
         /**
          * @var bool
          */
-        protected bool $smooth = false;
+        protected $smooth = false;
 
         /**
          * @var bool
          */
-        protected bool $autofont = false;
+        protected $autofont = false;
 
         /**
          * @var bool
          */
-        protected bool $keepCase  = false;
+        protected $keepCase = false;
 
         /**
          * @var bool
          */
-        protected bool $allowSpecialCharacters = true;
+        protected $allowSpecialCharacters = true;
 
         /**
          * @var string
          */
-        protected string $fontFile = '/fonts/OpenSans-Regular.ttf';
+        protected $fontFile = __DIR__ . DIRECTORY_SEPARATOR . 'Fonts' . DIRECTORY_SEPARATOR . 'OpenSans-Regular.ttf';
 
         /**
          * @var string
          */
-        protected string $fontName = 'OpenSans, sans-serif';
+        protected $fontName = 'OpenSans, sans-serif';
 
         /**
          * @var string
          */
-        protected string $generated_initials = 'JD';
+        protected $generated_initials = 'JD';
 
         /**
          * @var bool
          */
-        protected bool $preferBold  = false;
+        protected $preferBold  = false;
 
         /**
          * Language eg.en zh-CN
          *
          * @var string
          */
-        protected string $language = 'en';
+        protected $language = 'en';
 
         /**
          * Role translator
          *
          * @var LanguageBase
          */
-        protected LanguageBase $translator;
+        protected $translator;
 
         /**
          * Language related to translator
