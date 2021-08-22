@@ -1,0 +1,93 @@
+{
+    "package": {
+        "package_name": "net.intellivoid.udp2",
+        "name": "User Display Picture Manager",
+        "version": "1.0.0.0",
+        "author": "Zi Xing Narrakas",
+        "organization": "Intellivoid",
+        "description": "Manages/Generates user display pictures safely",
+        "url": "https://github.com/intellivoid/udp2",
+        "dependencies": [
+            {
+                "package": "net.intellivoid.zimage",
+                "version": "latest",
+                "source": "default@github/intellivoid/Zimage",
+                "required": true
+            }
+        ],
+        "configuration": {
+            "autoload_method": "generated_spl",
+            "main": null,
+            "post_installation": [
+                "post_install"
+            ],
+            "pre_installation": []
+        }
+    },
+    "components": [
+        {
+            "required": true,
+            "file": "Abstracts/DefaultAvatarType.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/SvgGenerator.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/Security.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/ImageProcessor.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/BaseGenerator.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/GdGenerator.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/HashDisplayPictureGenerator.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/SystemException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/UnsupportedAvatarGeneratorException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/FileUploadException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/AvatarNotFoundException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/AvatarGeneratorException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/ImageTooSmallException.php"
+        },
+        {
+            "required": true,
+            "file": "udp2.php"
+        },
+        {
+            "required": true,
+            "file": "Interfaces/GeneratorInterface.php"
+        }
+    ],
+    "files": [
+        "post_install",
+        "package.json"
+    ]
+}
