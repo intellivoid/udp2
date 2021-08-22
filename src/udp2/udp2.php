@@ -9,6 +9,7 @@
     use udp2\Abstracts\DefaultAvatarType;
     use udp2\Classes\HashDisplayPictureGenerator;
     use udp2\Classes\ImageProcessor;
+    use udp2\Classes\InitialsAvatarGenerator;
     use udp2\Exceptions\AvatarGeneratorException;
     use udp2\Exceptions\AvatarNotFoundException;
     use udp2\Exceptions\ImageTooSmallException;
@@ -136,8 +137,25 @@
                     {
                         throw new AvatarGeneratorException('There was an unknown error while trying to generate the avatar', null, $e);
                     }
-                    $tmp_file = new TmpFile($image_resource);
 
+                    $tmp_file = new TmpFile($image_resource);
+                    $this->applyAvatar($tmp_file->getFileName(), $id);
+                    break;
+
+                case DefaultAvatarType::InitialsBase:
+                    $initials_based_generator = new InitialsAvatarGenerator();
+
+                    try
+                    {
+                        $image_resource = $initials_based_generator->name($input)->generate();
+                    }
+                    catch(Exception $e)
+                    {
+                        throw new AvatarGeneratorException('There was an unknown error while trying to generate the avatar', null, $e);
+                    }
+
+                    $tmp_file = new TmpFile(null, ".jpg");
+                    $image_resource->save($tmp_file->getFileName(), 100);
                     $this->applyAvatar($tmp_file->getFileName(), $id);
                     break;
 
