@@ -1,6 +1,6 @@
 <?php
 
-namespace udp2\Utilities;
+    namespace udp2\Utilities;
 
     use RecursiveArrayIterator;
     use RecursiveIteratorIterator;
