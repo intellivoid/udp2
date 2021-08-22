@@ -8,7 +8,7 @@ namespace udp2\Utilities;
     class Initials
     {
         /**
-         * @var int 
+         * @var int
          */
         protected int $length = 2;
 

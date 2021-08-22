@@ -1,8 +1,21 @@
 <?php
 
-namespace udp2\Interfaces;
+    namespace udp2\Interfaces;
 
-class LanguageBse
-{
+    interface LanguageBase
+    {
+        /**
+         * Translate words to english
+         *
+         * @param string $words
+         * @return mixed
+         */
+        public function translate($words);
 
-}
+        /**
+         * Get the source language of translator
+         *
+         * @return string
+         */
+        public function getSourceLanguage();
+    }
