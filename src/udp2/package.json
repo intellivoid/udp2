@@ -13,6 +13,30 @@
                 "version": "latest",
                 "source": "default@github/intellivoid/Zimage",
                 "required": true
+            },
+            {
+                "package": "net.intellivoid.tmpfile",
+                "version": "latest",
+                "source": "default@github/intellivoid/TmpFile",
+                "required": true
+            },
+            {
+                "package": "net.intellivoid.imagelib",
+                "version": "latest",
+                "source": "default@github/intellivoid/ImageLib",
+                "required": true
+            },
+            {
+                "package": "net.intellivoid.svglib",
+                "version": "latest",
+                "source": "default@github/intellivoid/SvgLib",
+                "required": true
+            },
+            {
+                "package": "com.overtrue.pinyin",
+                "version": "latest",
+                "source": "overtrue@composer/pinyin",
+                "required": true
             }
         ],
         "configuration": {
