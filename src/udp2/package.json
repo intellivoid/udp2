@@ -59,6 +59,14 @@
         },
         {
             "required": true,
+            "file": "Classes/InitialsTranslator/En.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/InitialsTranslator/ZhCN.php"
+        },
+        {
+            "required": true,
             "file": "Classes/SvgGenerator.php"
         },
         {
@@ -80,6 +88,10 @@
         {
             "required": true,
             "file": "Classes/HashDisplayPictureGenerator.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/InitialsAvatarGenerator.php"
         },
         {
             "required": true,
@@ -127,6 +139,30 @@
         }
     ],
     "files": [
+        "Classes/Fonts/OpenSans-Semibold.ttf",
+        "Classes/Fonts/FontAwesome5Brands-Regular-400.otf",
+        "Classes/Fonts/FontAwesome5Free-Regular-400.otf",
+        "Classes/Fonts/Scripts/Noto-Arabic-Regular.ttf",
+        "Classes/Fonts/Scripts/Noto-Tibetan-Bold.ttf",
+        "Classes/Fonts/Scripts/Noto-Georgian-Regular.ttf",
+        "Classes/Fonts/Scripts/Noto-Mongolian-Regular.ttf",
+        "Classes/Fonts/Scripts/Noto-Thai-Bold.ttf",
+        "Classes/Fonts/Scripts/Noto-CJKJP-Regular.otf",
+        "Classes/Fonts/Scripts/Noto-Hebrew-Regular.ttf",
+        "Classes/Fonts/Scripts/Noto-CJKjp-Bold.otf",
+        "Classes/Fonts/Scripts/Noto-Hebrew-Bold.ttf",
+        "Classes/Fonts/Scripts/Noto-Thai-Regular.ttf",
+        "Classes/Fonts/Scripts/Noto-Armenian-Bold.ttf",
+        "Classes/Fonts/Scripts/Noto-Arabic-Bold.ttf",
+        "Classes/Fonts/Scripts/Noto-Georgian-Bold.ttf",
+        "Classes/Fonts/Scripts/Noto-Tibetan-Regular.ttf",
+        "Classes/Fonts/Scripts/Noto-Bengali-Bold.ttf",
+        "Classes/Fonts/Scripts/Noto-Bengali-Regular.ttf",
+        "Classes/Fonts/Scripts/Noto-Armenian-Regular.ttf",
+        "Classes/Fonts/NotoSans-Bold.ttf",
+        "Classes/Fonts/NotoSans-Regular.ttf",
+        "Classes/Fonts/FontAwesome5Free-Solid-900.otf",
+        "Classes/Fonts/OpenSans-Regular.ttf",
         "post_install",
         "package.json"
     ]
