@@ -3,7 +3,15 @@
     import('net.intellivoid.udp2');
 
     $udp = new \udp2\udp2();
-    $avatar = ($_GET['id'] ?? '1234567890');
+    $avatar = ($_GET['id'] ?? 'xD');
+    $name = ($_GET['name'] ?? $avatar);
+    $avatar_type = \udp2\Abstracts\DefaultAvatarType::InitialsBase;
+
+    if(isset($_GET['hb']))
+        $avatar_type = \udp2\Abstracts\DefaultAvatarType::HashBased;
+
+    if(isset($_GET['new']) && $_GET['new'] == '1')
+        $udp->generateAvatar($avatar, $name, $avatar_type);
 
     try
     {
@@ -11,7 +19,7 @@
     }
     catch (\udp2\Exceptions\AvatarNotFoundException $e)
     {
-        $udp->generateAvatar($avatar, "Netkas", \udp2\Abstracts\DefaultAvatarType::InitialsBase);
+        $udp->generateAvatar($avatar, $name, $avatar_type);
         $zimage = $udp->getAvatar($avatar);
     }
 ?>

@@ -6,6 +6,8 @@
 
     use Exception;
     use TmpFile\TmpFile;
+    use udp2\Abstracts\ColorScheme;
+    use udp2\Abstracts\ColorThemes;
     use udp2\Abstracts\DefaultAvatarType;
     use udp2\Classes\HashDisplayPictureGenerator;
     use udp2\Classes\ImageProcessor;
@@ -89,7 +91,8 @@
                 }
             }
 
-            $zimage = ImageProcessor::resizeImageModern($zimage, new Size('640x640'));
+            if($zimage->getOriginalSize()->getWidth() !== 640 && $zimage->getOriginalSize()->getHeight() !== 640)
+                $zimage = ImageProcessor::resizeImageModern($zimage, new Size('640x640'));
 
             if(file_exists($this->getAvatarLocation($id)))
                 unlink($this->getAvatarLocation($id));
@@ -120,7 +123,7 @@
          * @throws UnsupportedImageTypeException
          * @throws AvatarGeneratorException
          */
-        public function generateAvatar(string $id, string $input=null, string $type=DefaultAvatarType::HashBased): bool
+        public function generateAvatar(string $id, string $input=null, string $type=DefaultAvatarType::HashBased, string $color_scheme=ColorScheme::Random, ?array $color_theme=ColorThemes::Random): bool
         {
             if($input == null)
                 $input = $id;
@@ -146,6 +149,38 @@
                     $initials_based_generator = new InitialsAvatarGenerator();
                     $initials_based_generator->width(640);
                     $initials_based_generator->height(640);
+
+                    if($color_theme == null)
+                        $color_theme = ColorThemes::AllColors[array_rand(ColorThemes::AllColors)];
+
+                    if(
+                        $color_theme == ColorScheme::Random ||
+                        $color_scheme !== ColorScheme::Dark ||
+                        $color_scheme !== ColorScheme::Light
+                    )
+                    {
+                        if(rand(0,1) == 1)
+                        {
+                            $color_scheme = ColorScheme::Light;
+                        }
+                        else
+                        {
+                            $color_scheme = ColorScheme::Dark;
+                        }
+                    }
+
+                    switch($color_scheme)
+                    {
+                        case ColorScheme::Light:
+                            $initials_based_generator->color($color_theme[0]);
+                            $initials_based_generator->background($color_theme[1]);
+                            break;
+
+                        case ColorScheme::Dark:
+                            $initials_based_generator->color($color_theme[1]);
+                            $initials_based_generator->background($color_theme[0]);
+                            break;
+                    }
 
                     try
                     {

@@ -51,6 +51,14 @@
     "components": [
         {
             "required": true,
+            "file": "Abstracts/ColorThemes.php"
+        },
+        {
+            "required": true,
+            "file": "Abstracts/ColorScheme.php"
+        },
+        {
+            "required": true,
             "file": "Abstracts/LanguageScriptRegex.php"
         },
         {
