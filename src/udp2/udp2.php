@@ -102,6 +102,7 @@
                 new Size('360x360'),
                 new Size('160x160'),
                 new Size('64x64'),
+                new Size('32x32'),
             ]);
 
             $zimage->save($this->getAvatarLocation($id));
